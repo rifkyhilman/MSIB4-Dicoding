@@ -1,3 +1,59 @@
-h1 {
-    color: aqua;
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap');
+
+* {
+    /* digunakan untuk menghapus seluruh padding dan margin standar yang diberikan browser pada elemen */
+    margin: 0;
+    padding: 0;
+    /* Menggunakan border-box dalam perhitungan dimensi box-nya */
+    box-sizing: border-box;
+}
+
+ h1 {
+    color: brown;
+}
+
+p {
+    font-family: 'Tilt Prism', cursive;
+}
+
+.content {
+    border: 1px solid black;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.box1 {
+    text-align: center;
+    /* line-height: 400px; */
+    width: 30%;
+    height: 100%;
+    background-color: #00c7ed;
+    /* digunakan untuk memindahkan posisi elemen ke sisi kiri container */
+    float: left;
+}
+
+.box2 {
+    text-align: center;
+    /* line-height: 400px; */
+    width: 70%;
+    height: 100%;
+    background-color: #60d0a8;
+    /* digunakan untuk memindahkan posisi elemen ke sisi kanan container */
+    float: right;
+}
+
+p {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav {
+    background-color: black;
+    padding: 10px;
+}
+
+.nav li{
+    display: inline;
+    margin-left: 10px;
+    color: white;
 }
