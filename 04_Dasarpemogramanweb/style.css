@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap');
+
 
 * {
     /* digunakan untuk menghapus seluruh padding dan margin standar yang diberikan browser pada elemen */
@@ -8,52 +9,115 @@
     box-sizing: border-box;
 }
 
- h1 {
-    color: brown;
-}
+body {
+    font-family: 'Quicksand', sans-serif;
+ }
 
-p {
-    font-family: 'Tilt Prism', cursive;
-}
 
-.content {
-    border: 1px solid black;
-    width: 800px;
-    margin: 0 auto;
-}
-
-.box1 {
-    text-align: center;
-    /* line-height: 400px; */
-    width: 30%;
-    height: 100%;
-    background-color: #00c7ed;
-    /* digunakan untuk memindahkan posisi elemen ke sisi kiri container */
-    float: left;
-}
-
-.box2 {
-    text-align: center;
-    /* line-height: 400px; */
-    width: 70%;
-    height: 100%;
-    background-color: #60d0a8;
-    /* digunakan untuk memindahkan posisi elemen ke sisi kanan container */
-    float: right;
-}
-
-p {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.nav {
-    background-color: black;
-    padding: 10px;
-}
-
-.nav li{
+ header {
     display: inline;
-    margin-left: 10px;
+ }
+
+ 
+ #content {
+    float: left;
+    width: 75%;
+  }
+
+ h2, h3 {
+    color: #00a2c6
+ }
+ 
+ .jumbotron {
+    padding: 60px;
+    background-color: #00c8eb;
+    text-align: center;
+    font-size: 20px;
     color: white;
-}
+ }  
+
+ nav {
+    background-color: #00a2c6;
+    padding: 5px;
+    position: sticky;
+    top: 0;
+  }
+
+ nav li {
+    display: inline;
+    list-style-type: none;
+    margin-right: 20px;
+  }
+
+  nav a {
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    color: white;
+  }
+
+nav a:hover {
+    font-weight: bold;
+ }
+
+ main {
+    padding: 20px;
+  }
+
+ .featured-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center;
+ }
+
+ .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+ }
+
+ .profile-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+ }
+
+ .profile header {
+    text-align: center;
+ }
+
+ .profile img {
+    width: 200px;
+ }
+
+ aside {
+    float: right;
+    width: 25%;
+    padding-left: 20px;
+  }
+
+
+main {
+    padding: 20px;
+    overflow: auto;
+  }
+
+ footer {
+    padding: 20px;
+    color: white;
+    background-color: #00a2c6;
+    text-align: center;
+    font-weight: bold;
+ }
+
+ /* Responsive web  */
+ @media screen and (max-width: 1000px) {
+    #content,
+    aside {
+      width: 100%;
+      padding: 0;
+    }
+  }
