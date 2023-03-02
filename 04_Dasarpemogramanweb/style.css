@@ -20,12 +20,15 @@ body {
 
  
  #content {
-    float: left;
-    width: 75%;
+   flex: 5;
+   display: flex;
+   flex-flow: column nowrap;
+   gap: 1rem 2rem;
   }
 
  h2, h3 {
-    color: #00a2c6
+    color: #00a2c6;
+    margin: 10px;
  }
  
  .jumbotron {
@@ -43,10 +46,15 @@ body {
     top: 0;
   }
 
+  nav ul {
+   padding-inline: 5rem;
+   gap: 2rem;
+   display: flex;
+  }
+
  nav li {
-    display: inline;
     list-style-type: none;
-    margin-right: 20px;
+    margin: 10px;
   }
 
   nav a {
@@ -62,6 +70,8 @@ nav a:hover {
 
  main {
     padding: 20px;
+    display: flex;
+    gap: 1.5rem;
   }
 
  .featured-image {
@@ -75,7 +85,7 @@ nav a:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 20px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
  }
 
  .profile-card {
@@ -94,7 +104,7 @@ nav a:hover {
  }
 
  aside {
-    float: right;
+    flex: 1;
     width: 25%;
     padding-left: 20px;
   }
@@ -114,10 +124,21 @@ main {
  }
 
  /* Responsive web  */
- @media screen and (max-width: 1000px) {
-    #content,
-    aside {
-      width: 100%;
-      padding: 0;
+  @media screen and (max-width: 1200px) {
+   main {
+      flex-flow: column nowrap;
+    }
+    main aside {
+      align-self: center;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+   nav ul {
+      justify-content: center;
+    }
+   
+    main aside {
+      align-self: stretch;
     }
   }
