@@ -1,0 +1,13 @@
+{
+  "name": "05_dasarpemogramanjs",
+  "version": "1.0.0",
+  "description": "Dasar Pemograman Javascript",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "M Rifki H",
+  "license": "ISC"
+}
