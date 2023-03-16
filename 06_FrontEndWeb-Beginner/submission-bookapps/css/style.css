@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: Raleway, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: #0430f5;
+    padding: 16px;
+    color: white;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper .container {
+    width: 1024px;
+    border-radius: 8px;
+    margin: 16px;
+    background: #f8f9fa52;
+    padding: 16px;
+    flex-grow: 1;
+    height: fit-content;
+}
+
+
+.item {
+    border-radius: 16px;
+    margin-top: 16px;
+    padding: 12px 24px 12px 24px;
+    background: white;
+    display: flex;
+    align-items: center;
+}
+
+.item > .inner h2 {
+    margin-bottom: unset;
+}
+
+.item > .inner p {
+    margin-top: 5px;
+}
+
+.form {
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    height: 500px;
+    border-radius: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 4px;
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+.shadow {
+    box-shadow: 0 5px 10px rgba(154, 160, 185, .05), 0 15px 40px rgba(166, 173, 201, .2);
+}
+
+
+.search {
+    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+}
+
+.search > form {
+    padding: 16px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr 0.5fr;
+    grid-gap: 10px;
+}
+
+.search > form > label {
+    display: flex;
+    align-items: center;
+}
+
+.search > form > input {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.search > form > button {
+    font-family: Raleway, sans-serif;
+    border-radius: 16px;
+    border: 2px solid #5F30E2;
+    color: black;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.search > form > button:hover {
+    background: #5F30E2;
+    color: white;
+}
+
+input[type=text], input[type=number] {
+    font-family: Raleway, sans-serif;
+    background: #F5F1FF;
+    border: 2px solid #9475EA;
+    border-radius: 8px;
+    padding: 16px;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+.btn-submit {
+    width: fit-content;
+    font-family: Raleway, sans-serif;
+    border-radius: 16px;
+    padding: 12px 24px;
+    border: 2px solid #5F30E2;
+    color: black;
+    font-size: 24px;
+    margin-top: auto;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background: #5F30E2;
+    color: white;
+}
+
+input[type=text], input[type=number], .btn-submit:focus {
+    outline: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.form-title {
+    margin: auto 0;
+}
+
+.check-button {
+    width: 40px;
+    height: 40px;
+
+    background: url('../assets/check-outline.png');
+    background-size: contain;
+    margin-left: auto;
+    cursor: pointer;
+    border: none;
+}
+
+.check-button:hover {
+    background: url('../assets/check-fill.png');
+    background-size: contain;
+}
+
+.trash-button {
+    width: 40px;
+    height: 40px;
+    background: url('../assets/trash-outline.png');
+    background-size: contain;
+    margin-left: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.trash-button:hover {
+    background: url('../assets/trash-fill.png');
+    background-size: contain;
+}
+
+.undo-button {
+    width: 40px;
+    height: 40px;
+    background: url('../assets/undo-outline.png');
+    background-size: contain;
+    margin-left: auto;
+    cursor: pointer;
+    border: none;
+}
+
+.undo-button:hover {
+    background: url('../assets/undo-fill.png');
+    background-size: contain;
+}
+
+.check-button:focus, .trash-button {
+    outline: none;
+}
+
+.popup_box {
+    width: 100%;
+    background: #f2f2f2;
+    text-align: center;
+    align-items: center;
+    padding: 40px;
+  }
+  .popup_box img {
+   width: 150px;
+   height: 150px;
+  }
+  .popup_box h1 {
+    font-size: 30px;
+    color: #1b2631;
+    margin-bottom: 5px;
+  }
+  .popup_box label {
+    font-size: 23px;
+    color: #404040;
+  }
+  .popup_box .btns {
+    margin: 40px 0 0 0;
+  }
+  .btns .btn1, .btns .btn2 {
+    background: #999999;
+    color: white;
+    font-size: 25px;
+    border-radius: 5px;
+    border: 1px solid #808080;
+    padding: 10px 13px;
+  }
+  .btns .btn2 {
+    margin-left: 20px;
+    background: #ff3333;
+    border: 1px solid #cc0000;
+  }
+  .btns .btn1:hover {
+    transition: .5s;
+    background: #8c8c8c;
+  }
+  .btns .btn2:hover {
+    transition: .5s;
+    background: #e60000;
+  }
+
+@media only screen and (max-width: 1024px) {
+    .wrapper {
+        margin: 0;
+    }
+
+    .wrapper .container {
+        width: 100%;
+    }
+
+    .list-item {
+        width: 90%;
+    }
+
+    .form {
+        width: 100%;
+    }
+}
