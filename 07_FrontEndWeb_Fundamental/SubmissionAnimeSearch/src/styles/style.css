@@ -10,7 +10,34 @@ body {
 }
 
 main {
-  width: 90%;
-  max-width: 800px;
+  width: 100%;
   margin: 32px auto;
+}
+
+.posts {
+  display: grid;
+  grid-row-gap: 16px;
+  margin: 30px;
+}
+
+@media screen and (min-width: 700px) {
+  .posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 16px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .headline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 80px 60px;
+  }
 }

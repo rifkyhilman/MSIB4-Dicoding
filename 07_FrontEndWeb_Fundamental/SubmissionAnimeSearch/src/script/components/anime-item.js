@@ -29,7 +29,6 @@ class AnimeItem extends HTMLElement {
         
         .fan-art-anime {
           width: 100%;
-          height: 600px;
           object-fit: cover;
           object-position: center;
         }
@@ -61,7 +60,7 @@ class AnimeItem extends HTMLElement {
           margin-top: 30px;
         }
       </style>
-    
+      <div class="posts">
       <img class="fan-art-anime" src="${this._anime.images.webp.large_image_url}" alt="Fan Art">
       <div class="anime-info">
         <h2>${this._anime.title}</h2>
@@ -74,6 +73,7 @@ class AnimeItem extends HTMLElement {
             </svg>
           </a>
         </p>
+      </div>
       </div>
     `;
   }

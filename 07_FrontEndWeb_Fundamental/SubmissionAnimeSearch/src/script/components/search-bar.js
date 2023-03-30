@@ -21,12 +21,11 @@ class SearchBar extends HTMLElement {
         this.shadowDOM.innerHTML = `
         <style>
             .search-container {
-                max-width: 800px;
                 padding: 16px;
                 border-radius: 5px;
                 display: flex;
                 top: 10px;
-                margin-bottom: 30px;
+                margin: 30px;
             }
             
             .search-container > input {
@@ -52,9 +51,10 @@ class SearchBar extends HTMLElement {
             }
             
             .search-container > button {
-                width: 23%;
+                width: 20%;
                 cursor: pointer;
                 margin-left: auto;
+                margin-right:30px;
                 padding: 16px;
                 background-color: #00ADB5;
                 color: white;
