@@ -1,4 +1,5 @@
-import 'regenerator-runtime'; /* for async await transpile */
-import '../styles/main.css';
-
-console.log('Hello Coders! :)');
+import 'regenerator-runtime'; 
+import '../styles/main.scss';
+import '../styles/responsive.scss';
+import './view/render.js';
+import './view/navbar.js';

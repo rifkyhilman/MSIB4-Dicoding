@@ -1,11 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+
 
 module.exports = {
   entry: {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
-    sw: path.resolve(__dirname, 'src/scripts/sw.js'),
   },
   output: {
     filename: '[name].bundle.js',
@@ -15,15 +16,18 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.s[ac]ss$/i,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        dependency: { not: ['url'] },
         use: [
           {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
+            loader: 'file-loader',
           },
         ],
+        type: 'javascript/auto', 
       },
     ],
   },
@@ -35,10 +39,13 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src/public/'),
+          from: path.resolve(__dirname, 'src/images'),
           to: path.resolve(__dirname, 'dist/'),
         },
       ],
+    }),
+    new FaviconsWebpackPlugin({
+      logo: path.resolve(__dirname, 'src/images/logo-icon.png'),
     }),
   ],
 };

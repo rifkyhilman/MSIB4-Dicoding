@@ -1,49 +1,39 @@
-.posts {
-    display: grid;
-    grid-gap: 16px;
-  }
-  
   @media screen and (max-width: 499px) {
+    .post-item {
+      margin-bottom: 50px;
+    }
+
     .nav {
-      margin-top: 100px;
+      margin-top: 205px;
       z-index: 1000;
       background-color: #395144;
       width: 100%;
       position: absolute;
-  
-      /* This trasform moves the drawer off canvas. */
-      -webkit-transform: translate(400px, 0);
-      transform: translate(400px, 0);
-  
-      /* Optionally, we animate the drawer. */
+      -webkit-transform: translate(500px, 0);
+      transform: translate(500px, 0);
       transition: transform 0.3s ease;
+
+      &__list {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__item {
+        padding: 0;
+        margin: 0;
+        
+        &:hover {
+          background-color: #4E6C50;
+        }
+      }
+
     }
   
     .open {
       -webkit-transform: translate(50px, 0);
       transform: translate(0, 0);
     }
-  
-    .nav__item {
-      display: list-item;
-      border-bottom: 1px solid #E0E0E0;
-      width: 100%;
-      text-align: left;
-    }
-  }
-  
-  @media screen and (min-width: 455px) {
-    .headline__content {
-      padding: 16px 16px;
-    }
-  
-    .headline__title {
-      font-size: 28px;
-    }
-  
-    .headline__description {
-      font-size: 16px;
-    }
+    
   }
   
   @media screen and (min-width: 500px) {
@@ -53,13 +43,8 @@
   }
   
   @media screen and (min-width: 650px) {
-    .headline__content {
-      margin: 0 auto;
-      max-width: 650px;
-    }
-  
     .post-item__content {
-      padding: 16px 32px 32px 32px;
+      padding: 0 32px 32px 32px;
     }
   
     .post-item__title {
@@ -75,25 +60,18 @@
     .posts {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-column-gap: 10px;
-      grid-row-gap: 16px;
+      grid-column-gap: 30px;
+      grid-row-gap: 30px;
     }
   }
 
   
   @media screen and (min-width: 900px) {
-    .headline {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-  
-    .headline__content {
-      padding: 16px 32px;
-    }
-  
     .posts {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 30px;
+      grid-row-gap: 30px;
     }
   }
   
