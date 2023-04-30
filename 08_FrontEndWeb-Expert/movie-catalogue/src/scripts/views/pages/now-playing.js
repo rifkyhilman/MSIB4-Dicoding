@@ -14,7 +14,7 @@ const NowPlaying = {
  
   async afterRender() {
     const movies = await TheMovieDbSource.nowPlayingMovies();
-    const moviesContainer = document.querySelector('.posts');
+    const moviesContainer = document.querySelector('#movies');
     movies.forEach((movie) => {
       moviesContainer.innerHTML += createMovieItemTemplate(movie);
     });
