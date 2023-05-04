@@ -38,13 +38,13 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src/images'),
+          from: path.resolve(__dirname, 'src/public'),
           to: path.resolve(__dirname, 'dist/'),
         },
       ],
     }),
     new FaviconsWebpackPlugin({
-      logo: path.resolve(__dirname, 'src/images/logo-icon.png'),
+      logo: path.resolve(__dirname, 'src/public/favicon.png'),
     }),
   ],
 };

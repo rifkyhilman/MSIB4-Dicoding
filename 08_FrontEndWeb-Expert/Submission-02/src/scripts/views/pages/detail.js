@@ -21,11 +21,18 @@ const Detail = {
   },
 
   async afterRender() {
-    const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const restaurants = await RestaurantDbSource.detailRestaurant(url.id);
-    console.log(restaurants);
+    let view = '<h1>loading...</h1>';
     const restaurantContainer = document.querySelector('#restaurant-detail');
-    restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurants);
+    restaurantContainer.innerHTML = view;
+    try {
+      const url = UrlParser.parseActiveUrlWithoutCombiner();
+      const restaurants = await RestaurantDbSource.detailRestaurant(url.id);
+      view = createRestaurantDetailTemplate(restaurants);
+      restaurantContainer.innerHTML = view;
+    } catch (error) {
+      view = '<h1>Err</h1>';
+      restaurantContainer.innerHTML = view;
+    }
   },
 };
 
