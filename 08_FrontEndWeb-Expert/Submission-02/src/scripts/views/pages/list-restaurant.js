@@ -4,27 +4,35 @@ import { createRestaurantItemTemplate } from '../templates/template-creator';
 const ListRestaurant = {
   async render() {
     return `
-            <section class="hero">
-                <div class="hero__inner">
-                    <h1 class="hero__title">For the love of delicious food</h1>
-                    <p class="hero__tagline">Come with family & feel the joy of mouthwartering food</p>
-                </div>
-            </section>
-            <section id= "content" class="content">
-                <div class="latest">
-                    <h1 class="latest__label">Explore Restaurant</h1>
-                    <div class="posts"></div>
-                </div>
-            </section>
-          `;
+      <app-bar></app-bar>
+    `;
   },
 
   async afterRender() {
-    const restaurants = await RestaurantDbSource.listRestaurant();
-    const restaurantContainer = document.querySelector('.posts');
-    restaurants.forEach((restaurant) => {
-      restaurantContainer.innerHTML += createRestaurantItemTemplate(restaurant);
-    });
+    let view = `
+    <div class="loader">
+      <div class="loader__icon"></div>
+    </div>`;
+    let item = '';
+    const restaurantContainer = document.querySelector('#restaurants__list');
+    restaurantContainer.innerHTML = view;
+    try {
+      const restaurants = await RestaurantDbSource.listRestaurant();
+      restaurants.forEach((restaurant) => {
+        item += createRestaurantItemTemplate(restaurant);
+      });
+      view = `<div id="restaurants" class="restaurants__list__item">${item}</div>`;
+      restaurantContainer.innerHTML = view;
+    } catch (error) {
+      view = `
+      <div class="error">
+      <div class="error__text">
+          <h1>400</h1> 
+          <p>Bad Request</p>
+        </div>
+        </div>`;
+      restaurantContainer.innerHTML = view;
+    }
   },
 };
 

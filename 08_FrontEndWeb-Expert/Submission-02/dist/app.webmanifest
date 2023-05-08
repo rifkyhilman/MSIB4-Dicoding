@@ -1,12 +1,13 @@
 {
-    "id": "anfarisa-restaurant-lite-pwa-1",
-    "start_url": "./index.html",
+    "id": "anfarisa-pwa-1",
     "name": "Anfarsia Restaurant Lite",
     "short_name": "Anfarisa Lite",
     "description": "information about restaurant",
+    "background_color": "#222831",
+    "theme_color": "#395144",
+    "start_url": "./index.html",
     "display": "standalone",
-    "background_color": "#FFFFFF",
-    "theme_color": "#D84315",
+
     "icons": [
       {
         "src": "/icons/icon-72x72.png",

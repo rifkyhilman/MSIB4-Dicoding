@@ -1,6 +1,7 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantDbSource from '../../data/restaurantdb-source';
-import { createRestaurantDetailTemplate } from '../templates/template-creator';
+import { createRestaurantDetailTemplate, createLikeButtonTemplate } from '../templates/template-creator';
+import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const Detail = {
   async render() {
@@ -11,26 +12,49 @@ const Detail = {
             <p class="hero__tagline">Come with family & feel the joy of mouthwartering food</p>
         </div>
     </section>
-    <section id= "content" class="content">
-        <div class="latest">
-            <h1 class="latest__label">Detail of Restaurant</h1>
-            <div id="restaurant-detail" class="restaurant-detail"></div>
+    <section id= "content" class="restaurants">
+        <div class="restaurants__content">
+            <h1 class="restaurants__content__label">Detail of Restaurant</h1>
+            <div id="restaurant" class="restaurant"></div>
+            <div id="likeButtonContainer"></div>
         </div>
     </section>
         `;
   },
 
   async afterRender() {
-    let view = '<h1>loading...</h1>';
-    const restaurantContainer = document.querySelector('#restaurant-detail');
+    let view = `
+    <div class="loader">
+      <div class="loader__icon"></div>
+    </div>`;
+    const restaurantContainer = document.querySelector('#restaurant');
+    const likeButtonContainer = document.querySelector('#likeButtonContainer');
     restaurantContainer.innerHTML = view;
     try {
       const url = UrlParser.parseActiveUrlWithoutCombiner();
       const restaurants = await RestaurantDbSource.detailRestaurant(url.id);
+      LikeButtonInitiator.init({
+        likeButtonContainer: document.querySelector('#likeButtonContainer'),
+        restaurant: {
+          id: restaurants.id,
+          name: restaurants.name,
+          city: restaurants.city,
+          pictureId: restaurants.pictureId,
+          rating: restaurants.rating,
+          description: restaurants.description,
+        },
+      });
       view = createRestaurantDetailTemplate(restaurants);
       restaurantContainer.innerHTML = view;
+      likeButtonContainer.innerHTML = createLikeButtonTemplate();
     } catch (error) {
-      view = '<h1>Err</h1>';
+      view = `
+      <div class="error">
+      <div class="error__text">
+          <h1>400</h1> 
+          <p>Bad Request</p>
+        </div>
+        </div>`;
       restaurantContainer.innerHTML = view;
     }
   },

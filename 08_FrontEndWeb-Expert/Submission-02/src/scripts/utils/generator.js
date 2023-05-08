@@ -1,9 +1,12 @@
 function generateReview(arr) {
   let res = '';
   for (let i = 0; i < arr.length; i += 1) {
-    res += `<p>${arr[i].date}</p>
-      <p>${arr[i].name}</p>
-      <p>${arr[i].review}</p>`;
+    res += `
+    <div class="restaurant__reviews-card">
+    <h4>${arr[i].name}</h4>
+    <p>${arr[i].review}</p>
+    <p> Date of rivew: ${arr[i].date}</p>
+    </div>`;
   }
   return `<div>${res}</div>`;
 }
