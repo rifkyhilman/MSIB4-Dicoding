@@ -2,13 +2,17 @@ function generateReview(arr) {
   let res = '';
   for (let i = 0; i < arr.length; i += 1) {
     res += `
-    <div class="restaurant__reviews-card">
-    <h4>${arr[i].name}</h4>
-    <p>${arr[i].review}</p>
-    <p> Date of rivew: ${arr[i].date}</p>
+    <div class="restaurant__reviews__card">
+    <h3>${arr[i].name}</h3>
+      <div class="restaurant__reviews__card__content">
+        <p>${arr[i].review}</p>
+      </div>
+      <div class="restaurant__reviews__card__date">
+        <p> Date of rivew: ${arr[i].date}</p>
+      </div>
     </div>`;
   }
-  return `<div>${res}</div>`;
+  return res;
 }
 
 function generateFoodAndDrink(arr) {
@@ -19,4 +23,14 @@ function generateFoodAndDrink(arr) {
   return `<ul>${res}</ul>`;
 }
 
-export { generateReview, generateFoodAndDrink };
+function generateCategories(arr) {
+  let res = '';
+  for (let i = 0; i < arr.length; i += 1) {
+    res += `<p>${arr[i].name}</p>`;
+  }
+  return `<div class="restaurant__title__categorie_"><p>(</p>${res}<p>)</p></div>`;
+}
+
+export {
+  generateReview, generateFoodAndDrink, generateCategories,
+};

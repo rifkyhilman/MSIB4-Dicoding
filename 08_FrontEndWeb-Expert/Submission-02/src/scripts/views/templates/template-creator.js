@@ -1,33 +1,45 @@
 import ENDPOINT from '../../globals/api-endpoint';
-import { generateReview, generateFoodAndDrink } from '../../utils/generator';
+import {
+  generateReview, generateFoodAndDrink, generateCategories,
+} from '../../utils/generator';
 
 const createRestaurantDetailTemplate = (restaurant) => `
-  <h2 class="restaurant__title">${restaurant.name}</h2>
-  <img class="restaurant__poster"
-  src="${ENDPOINT.LARGE_IMAGE + restaurant.pictureId}"
-  alt="${restaurant.name}">
-  <div class="restaurant__info">
-    <h3>Information</h3>
-    <h4>Alamat : </h4>
-    <p>${restaurant.address}</p>
-    <h4>Kota : </h4>
-    <p>${restaurant.city}</p>
-    <h4>Deskripsi : </h4>
+  <div class="restaurant__title">
+    <div class="restaurant__title__categorie">  
+      <h2>${restaurant.name}</h2>${generateCategories(restaurant.categories)}
+    </div>
+    <div class="restaurant__title__addres">
+      <p>${restaurant.address}, ${restaurant.city}</p>
+    </div>
+  </div>
+  <div class="restaurant__poster">
+    <img 
+    src="${ENDPOINT.LARGE_IMAGE + restaurant.pictureId}"
+    alt="${restaurant.name}">
+  </div>
+  <div class="restaurant__description">
+    <h2>Deskripsi</h2>
     <p>${restaurant.description}</p>
   </div>
   <div class="restaurant__menus">
-    <h4>Menus</h4>
-    <div class="restaurant__makanan">
-    <ul> Makanan </ul>
-      ${generateFoodAndDrink(restaurant.menus.foods)}
-    </div>
-    <div class="restaurant__minuman">
-    <h4>Minuman</h4>
-      ${generateFoodAndDrink(restaurant.menus.drinks)}
+    <h2>Menu Foods & Drinks</h2>
+    <div class="restaurant__menus__list">
+      <div class="restaurant__menus__list__foods">
+      <div class="restaurant__menus__list__foods__title">
+        <h3>Foods</h3>
+      </div>
+        ${generateFoodAndDrink(restaurant.menus.foods)}
+      </div>
+      <div class="restaurant__menus__list__drinks">
+      <div class="restaurant__menus__list__drinks__title">
+        <h3>Drinks</h3>
+      </div>
+        ${generateFoodAndDrink(restaurant.menus.drinks)}
+      </div>
     </div>
   </div>
   <div class="restaurant__reviews">
-    <h3>Customer Rivewer : </h3>
+    <h2>Customer Rivewer</h2>
     ${generateReview(restaurant.customerReviews)}
   </div>
 `;
@@ -35,7 +47,9 @@ const createRestaurantDetailTemplate = (restaurant) => `
 const createRestaurantItemTemplate = (restaurant) => `
   <div class="restaurant-item">
   <div class="restaurant-item__header">
-    <img class="restaurant-item__header__poster" alt="${restaurant.name}" src="${ENDPOINT.MEDIUM_IMAGE + restaurant.pictureId}">
+    <a href="/#/detail/${restaurant.id}">
+      <img class="restaurant-item__header__poster" alt="${restaurant.name}" src="${ENDPOINT.MEDIUM_IMAGE + restaurant.pictureId}">
+    </a>
     <div class="restaurant-item__header__label">
       <p>${restaurant.city}</p>
     </div>
@@ -54,13 +68,13 @@ const createRestaurantItemTemplate = (restaurant) => `
 
 const createLikeButtonTemplate = () => `
   <button aria-label="like this movie" id="likeButton" class="like">
-     <i class="fa fa-heart-o" aria-hidden="true"></i>
+     <i class="fa fa-heart-o" aria-hidden="false"></i>
   </button>
 `;
 
 const createLikedButtonTemplate = () => `
   <button aria-label="unlike this movie" id="likeButton" class="like">
-    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="fa fa-heart" aria-hidden="false"></i>
   </button>
 `;
 

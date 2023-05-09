@@ -31,10 +31,27 @@
       transform: translate(0, 0);
     }
 
+    .likeBtn {
+      top: 100px;
+    }
+    
     .restaurant-item {
       margin-bottom: 40px;
     }
-    
+
+    .restaurant {
+      &__menus__list {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 30px;
+        grid-row-gap: 40px;
+      }
+
+      &__title__categorie {
+        display: contents;
+      }    
+    }
+
   }
   
   @media screen and (min-width: 500px) {

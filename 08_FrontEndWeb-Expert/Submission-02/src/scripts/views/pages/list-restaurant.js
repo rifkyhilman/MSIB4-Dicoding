@@ -26,11 +26,11 @@ const ListRestaurant = {
     } catch (error) {
       view = `
       <div class="error">
-      <div class="error__text">
+        <div class="error__text">
           <h1>400</h1> 
           <p>Bad Request</p>
         </div>
-        </div>`;
+      </div>`;
       restaurantContainer.innerHTML = view;
     }
   },

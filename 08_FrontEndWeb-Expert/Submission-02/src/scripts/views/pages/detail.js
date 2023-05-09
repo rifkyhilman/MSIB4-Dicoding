@@ -15,20 +15,20 @@ const Detail = {
     <section id= "content" class="restaurants">
         <div class="restaurants__content">
             <h1 class="restaurants__content__label">Detail of Restaurant</h1>
+            <div id="likeButtonContainer" class="likeBtn"></div>
             <div id="restaurant" class="restaurant"></div>
-            <div id="likeButtonContainer"></div>
         </div>
     </section>
         `;
   },
 
   async afterRender() {
+    const likeButtonContainer = document.querySelector('#likeButtonContainer');
+    const restaurantContainer = document.querySelector('#restaurant');
     let view = `
     <div class="loader">
       <div class="loader__icon"></div>
     </div>`;
-    const restaurantContainer = document.querySelector('#restaurant');
-    const likeButtonContainer = document.querySelector('#likeButtonContainer');
     restaurantContainer.innerHTML = view;
     try {
       const url = UrlParser.parseActiveUrlWithoutCombiner();
@@ -45,8 +45,8 @@ const Detail = {
         },
       });
       view = createRestaurantDetailTemplate(restaurants);
-      restaurantContainer.innerHTML = view;
       likeButtonContainer.innerHTML = createLikeButtonTemplate();
+      restaurantContainer.innerHTML = view;
     } catch (error) {
       view = `
       <div class="error">
