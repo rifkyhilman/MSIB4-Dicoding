@@ -256,6 +256,11 @@ main {
 
     &__addres {
       font-size: 14px;
+
+      span {
+        font-size: 20px;
+        margin-right: 5px;
+      }
     }
 
   }
@@ -379,7 +384,7 @@ main {
   margin: 0 auto;
   width: 100%;
   max-width: 800px;
-  top: 55px;
+  top: 75px;
   right: 10px;
   display: flex;
   justify-content: end;

@@ -9,7 +9,9 @@ const createRestaurantDetailTemplate = (restaurant) => `
       <h2>${restaurant.name}</h2>${generateCategories(restaurant.categories)}
     </div>
     <div class="restaurant__title__addres">
-      <p>${restaurant.address}, ${restaurant.city}</p>
+      <p><span class="material-symbols-outlined">
+      location_on
+      </span>${restaurant.address}, ${restaurant.city}</p>
     </div>
   </div>
   <div class="restaurant__poster">
@@ -41,6 +43,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
   <div class="restaurant__reviews">
     <h2>Customer Rivewer</h2>
     ${generateReview(restaurant.customerReviews)}
+    <button>Add Review</button>
   </div>
 `;
 

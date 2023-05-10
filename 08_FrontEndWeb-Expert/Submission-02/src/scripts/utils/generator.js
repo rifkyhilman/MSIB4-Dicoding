@@ -8,7 +8,7 @@ function generateReview(arr) {
         <p>${arr[i].review}</p>
       </div>
       <div class="restaurant__reviews__card__date">
-        <p> Date of rivew: ${arr[i].date}</p>
+        <p> Date of riview : ${arr[i].date}</p>
       </div>
     </div>`;
   }

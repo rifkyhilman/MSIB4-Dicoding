@@ -32,7 +32,13 @@ const Detail = {
     restaurantContainer.innerHTML = view;
     try {
       const url = UrlParser.parseActiveUrlWithoutCombiner();
+      // const data = {
+      //   id: `${url.id}`,
+      //   name: 'Dinosaurus',
+      //   review: 'Wow mantap',
+      // };
       const restaurants = await RestaurantDbSource.detailRestaurant(url.id);
+      // const testaja = await RestaurantDbSource.addReviewRestaurant(data);
       LikeButtonInitiator.init({
         likeButtonContainer: document.querySelector('#likeButtonContainer'),
         restaurant: {
@@ -47,6 +53,7 @@ const Detail = {
       view = createRestaurantDetailTemplate(restaurants);
       likeButtonContainer.innerHTML = createLikeButtonTemplate();
       restaurantContainer.innerHTML = view;
+      // console.log(testaja);
     } catch (error) {
       view = `
       <div class="error">
