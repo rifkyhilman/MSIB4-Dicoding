@@ -43,7 +43,8 @@ const createRestaurantDetailTemplate = (restaurant) => `
   <div class="restaurant__reviews">
     <h2>Customer Rivewer</h2>
     ${generateReview(restaurant.customerReviews)}
-    <button>Add Review</button>
+    <button id="addButton" class="restaurant__reviews__button">Add Review</button>
+    <div class="addForm"></div>
   </div>
 `;
 
@@ -81,9 +82,36 @@ const createLikedButtonTemplate = () => `
   </button>
 `;
 
+const createFormaddTemplate = () => `
+  <div class="restaurant__reviews__form">
+    <form>
+      <div class="restaurant__reviews__form__row">
+        <div class="restaurant__reviews__form__col-25">
+          <label for="fname">Name</label>
+        </div>
+        <div class="restaurant__reviews__form__col-75">
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        </div>
+      </div>
+      <div class="restaurant__reviews__form__row">
+        <div class="restaurant__reviews__form__col-25">
+          <label for="subject">Riview</label>
+        </div>
+        <div class="restaurant__reviews__form__col-75">
+          <textarea id="friview" name="subject" placeholder="Write something.."></textarea>
+        </div>
+      </div>
+      <div class="restaurant__reviews__form__row">
+        <button id="submit"> Submit </button>
+      </div>
+    </form>
+  </div>
+`;
+
 export {
   createRestaurantItemTemplate,
   createRestaurantDetailTemplate,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
+  createFormaddTemplate,
 };

@@ -2,6 +2,7 @@ import UrlParser from '../../routes/url-parser';
 import RestaurantDbSource from '../../data/restaurantdb-source';
 import { createRestaurantDetailTemplate, createLikeButtonTemplate } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
+import test from '../../utils/add-button';
 
 const Detail = {
   async render() {
@@ -53,6 +54,7 @@ const Detail = {
       view = createRestaurantDetailTemplate(restaurants);
       likeButtonContainer.innerHTML = createLikeButtonTemplate();
       restaurantContainer.innerHTML = view;
+      test(url.id);
       // console.log(testaja);
     } catch (error) {
       view = `
