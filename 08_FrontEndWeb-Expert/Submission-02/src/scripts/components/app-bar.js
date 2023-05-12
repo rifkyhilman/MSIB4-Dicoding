@@ -5,19 +5,22 @@ class AppBar extends HTMLElement {
 
   render() {
     this.innerHTML = `
-    <section class="hero">
-        <div class="hero__inner">
-            <h1 class="hero__title">For the love of delicious food</h1>
-            <p class="hero__tagline">Come with family & feel the joy of mouthwartering food</p>
-        </div>
-    </section>
-    <section id= "content" class="restaurants">
-        <div class="restaurants__content">
-            <h1 class="restaurants__content__label">Explore Restaurant</h1>
-            <div id="restaurants__list"></div>
-        </div>
-    </section>
-  `;
+    <div class="app-bar">
+      <div class="app-bar__brand">
+        <h1>Anfarisa</h1>
+      </div>
+        <button id="hamburgerButton" class="app-bar__menu">
+          <span id="hamburgerIcon" class="material-symbols-outlined">menu</span>
+        </button>
+      <nav id="navigationDrawer" class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="/">Home</a></li>
+          <li class="nav__item"><a href="#/favorite">Favorite</a></li>
+          <li class="nav__item"><a href="https://github.com/rifkyhilman">About Us</a></li>
+        </ul>
+      </nav>
+    </div>
+    `;
   }
 }
 

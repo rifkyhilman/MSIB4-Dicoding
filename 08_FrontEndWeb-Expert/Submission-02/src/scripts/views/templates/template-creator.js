@@ -24,7 +24,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <p>${restaurant.description}</p>
   </div>
   <div class="restaurant__menus">
-    <h2>Menu Foods & Drinks</h2>
+    <h2>Menu</h2>
     <div class="restaurant__menus__list">
       <div class="restaurant__menus__list__foods">
       <div class="restaurant__menus__list__foods__title">
@@ -42,9 +42,15 @@ const createRestaurantDetailTemplate = (restaurant) => `
   </div>
   <div class="restaurant__reviews">
     <h2>Customer Rivewer</h2>
-    ${generateReview(restaurant.customerReviews)}
+    <div id="restaurant__reviews__content">
+      ${generateReview(restaurant.customerReviews)}
+    </div>
     <button id="addButton" class="restaurant__reviews__button">Add Review</button>
     <div class="addForm"></div>
+    <dialog id="myDialog">
+      <button id="closeDialog">X</button>
+      This is a dialog window
+    </dialog>
   </div>
 `;
 
@@ -71,26 +77,26 @@ const createRestaurantItemTemplate = (restaurant) => `
 `;
 
 const createLikeButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="like">
+  <button aria-label="favorite this restaurant" id="likeButton" class="like">
      <i class="fa fa-heart-o" aria-hidden="false"></i>
   </button>
 `;
 
 const createLikedButtonTemplate = () => `
-  <button aria-label="unlike this movie" id="likeButton" class="like">
+  <button aria-label="unfavorite this movie" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="false"></i>
   </button>
 `;
 
-const createFormaddTemplate = () => `
+const createFormTemplate = () => `
   <div class="restaurant__reviews__form">
-    <form>
+    <form id="form-review">
       <div class="restaurant__reviews__form__row">
         <div class="restaurant__reviews__form__col-25">
           <label for="fname">Name</label>
         </div>
         <div class="restaurant__reviews__form__col-75">
-          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+          <input type="text" id="fname" name="firstname" placeholder="Your name.." autofocus required minlength="2">
         </div>
       </div>
       <div class="restaurant__reviews__form__row">
@@ -98,13 +104,35 @@ const createFormaddTemplate = () => `
           <label for="subject">Riview</label>
         </div>
         <div class="restaurant__reviews__form__col-75">
-          <textarea id="friview" name="subject" placeholder="Write something.."></textarea>
+          <textarea id="freview" name="subject" placeholder="Write something.." required></textarea>
         </div>
       </div>
       <div class="restaurant__reviews__form__row">
-        <button id="submit"> Submit </button>
+        <button type="reset" id="submit" class="restaurant__reviews__form__button" > Submit </button>
       </div>
     </form>
+  </div>
+`;
+
+const createLoadingTemplate = () => `
+<div class="loader">
+  <div class="loader__icon"></div>
+</div>
+`;
+
+const createErrorTemplate = () => `
+  <div class="error">
+    <div class="error__text">
+        <h1>400</h1> 
+        <p>Bad Request</p>
+    </div>
+  </div>
+  `;
+
+const createZeroRestaurantTemplate = () => `
+  <div class="undefined">
+    <h1> There is no favorite restaurant yet </h1>
+    <p> let's add your favorite restaurant </p>
   </div>
 `;
 
@@ -113,5 +141,8 @@ export {
   createRestaurantDetailTemplate,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
-  createFormaddTemplate,
+  createFormTemplate,
+  createLoadingTemplate,
+  createErrorTemplate,
+  createZeroRestaurantTemplate,
 };

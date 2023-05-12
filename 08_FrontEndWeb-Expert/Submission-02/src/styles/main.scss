@@ -231,13 +231,16 @@ main {
   width: 100%;
   max-width: 800px; 
 
+  h2 {
+    font-size: 28px;
+  }
+
   &__title {
     margin-bottom: 30px;
     &__categorie {
       display: flex;
       margin-bottom: 10px;
       h2 {
-        font-size: 28px;
         margin-right: 10px;
       }
       p {
@@ -266,7 +269,7 @@ main {
   }
 
   &__poster {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 
     img {
       width: 100%;
@@ -277,12 +280,11 @@ main {
   }
 
   &__description {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     text-align: center;
     
     h2 {
       margin-bottom: 30px;
-      font-size: 16px;
     }
 
     p {
@@ -291,12 +293,11 @@ main {
   }
 
   &__menus {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     text-align: center;
 
     h2 {
       margin-bottom: 30px;
-      font-size: 16px;
     }
 
 
@@ -345,12 +346,11 @@ main {
   }
 
   &__reviews {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 
     h2 {  
       text-align: center;
       margin-bottom: 30px;
-      font-size: 16px;
     }
 
     &__card {
@@ -395,6 +395,7 @@ main {
       
       input, textarea {
         width: 100%;
+        min-height: 44px;
         background-color: #222831;
         border: 1px solid $color-text;
         padding: 10px;
@@ -412,6 +413,22 @@ main {
 
         textarea {
           height: 100px;
+        }
+      }
+
+      &__button {
+        min-height: 44px;
+        min-width: 44px;
+        background-color: #395144;
+        font-size: 14px;
+        padding: 15px 32px;
+        color:$color-text;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+  
+        &:hover {
+          background-color: #4E6C50;
         }
       }
     }
@@ -494,7 +511,7 @@ main {
   align-items: center;
   text-align: center;
   flex-wrap: wrap;
-  margin: 10%;
+  padding: 20%;
 
   &__text {
     h1 {
@@ -504,6 +521,18 @@ main {
       font-size: 20px;
     }
   }
+}
+
+/*
+  Undefined
+*/
+
+.undefined {
+  text-align: center;
+  padding: 20%;
+   h1 {
+    margin-bottom: 20px;
+   }
 }
 
 /*

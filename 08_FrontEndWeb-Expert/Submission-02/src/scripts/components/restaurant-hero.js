@@ -1,4 +1,4 @@
-class Hero extends HTMLElement {
+class RestaurantHero extends HTMLElement {
   connectedCallback() {
     this.render();
   }
@@ -15,4 +15,4 @@ class Hero extends HTMLElement {
   }
 }
 
-customElements.define('jumbutron', Hero);
+customElements.define('restaurant-hero', RestaurantHero);

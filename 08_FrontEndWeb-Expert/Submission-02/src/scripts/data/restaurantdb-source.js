@@ -16,7 +16,7 @@ class RestaurantDbSource {
   static async addReviewRestaurant(data) {
     try {
       const respone = await fetch(API_ENDPOINT.ADD_REVIEW, {
-        method: 'POST', // or 'PUT'
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -24,8 +24,9 @@ class RestaurantDbSource {
       });
       const result = await respone.json();
       console.log('Success', result);
+      return result.customerReviews;
     } catch (error) {
-      console.error('Error:', error);
+      return console.error('Error:', error);
     }
   }
 }
