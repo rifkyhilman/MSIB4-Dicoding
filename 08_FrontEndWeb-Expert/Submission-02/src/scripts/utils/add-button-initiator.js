@@ -1,7 +1,7 @@
 import { createFormTemplate } from '../views/templates/template-creator';
 import RestaurantDbSource from '../data/restaurantdb-source';
 
-const postDataRiview = {
+const postDataReview = {
   async renderForm(id) {
     const addButton = document.querySelector('#addButton');
     const formPost = document.querySelector('.addForm');
@@ -51,4 +51,4 @@ const postDataRiview = {
 
 };
 
-export default postDataRiview;
+export default postDataReview;

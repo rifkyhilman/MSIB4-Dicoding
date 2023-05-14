@@ -7,7 +7,7 @@ import {
   createErrorTemplate,
 } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
-import postDataRiview from '../../utils/add-button-initiator';
+import postDataReview from '../../utils/add-button-initiator';
 
 const Detail = {
   async render() {
@@ -39,7 +39,7 @@ const Detail = {
       view = createRestaurantDetailTemplate(restaurants);
       likeButtonContainer.innerHTML = createLikeButtonTemplate();
       restaurantContainer.innerHTML = view;
-      postDataRiview.renderForm(url.id);
+      postDataReview.renderForm(url.id);
     } catch (error) {
       view = createErrorTemplate();
       restaurantContainer.innerHTML = view;
