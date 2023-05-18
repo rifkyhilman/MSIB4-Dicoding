@@ -1,8 +1,7 @@
+const path = require('path');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
-const path = require('path');
 
 module.exports = {
   entry: {
@@ -46,9 +45,6 @@ module.exports = {
     }),
     new FaviconsWebpackPlugin({
       logo: path.resolve(__dirname, 'src/public/favicon.png'),
-    }),
-    new WorkboxWebpackPlugin.GenerateSW({
-      swDest: './sw.bundle.js',
     }),
   ],
 };
