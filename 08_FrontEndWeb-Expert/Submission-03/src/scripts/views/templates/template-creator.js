@@ -65,7 +65,11 @@ const createRestaurantItemTemplate = (restaurant) => `
     </div>
   </div>
   <div class="restaurant-item__content">
-    <h2><a href="/#/detail/${restaurant.id}">${restaurant.name}</a></h2>
+    <div>  
+      <h2 class="restaurant-item__content__name">
+        <a href="/#/detail/${restaurant.id}">${restaurant.name}</a>
+      </h2>
+    </div>  
     <div class="restaurant-item__content__rating">
       <p><span>⭐️(${restaurant.rating})</span></p>
     </div>
@@ -76,14 +80,14 @@ const createRestaurantItemTemplate = (restaurant) => `
   </div>
 `;
 
-const createLikeButtonTemplate = () => `
-  <button aria-label="favorite this restaurant" id="likeButton" class="like">
+const createLikeRestaurantButtonTemplate = () => `
+  <button aria-label="like this restaurant" id="likeButton" class="like">
      <i class="fa fa-heart-o" aria-hidden="false"></i>
   </button>
 `;
 
-const createLikedButtonTemplate = () => `
-  <button aria-label="unfavorite this movie" id="likeButton" class="like">
+const createUnlikeRestaurantButtonTemplate = () => `
+  <button aria-label="unlike this restaurant" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="false"></i>
   </button>
 `;
@@ -130,7 +134,7 @@ const createErrorTemplate = () => `
   `;
 
 const createZeroRestaurantTemplate = () => `
-  <div class="undefined">
+  <div class="restaurants__list__not-found">
     <h1> There is no favorite restaurant yet </h1>
     <p> let's add your favorite restaurant </p>
   </div>
@@ -139,8 +143,8 @@ const createZeroRestaurantTemplate = () => `
 export {
   createRestaurantItemTemplate,
   createRestaurantDetailTemplate,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate,
+  createLikeRestaurantButtonTemplate,
+  createUnlikeRestaurantButtonTemplate,
   createFormTemplate,
   createLoadingTemplate,
   createErrorTemplate,

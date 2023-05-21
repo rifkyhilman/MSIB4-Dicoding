@@ -2,7 +2,7 @@ import UrlParser from '../../routes/url-parser';
 import RestaurantDbSource from '../../data/restaurantdb-source';
 import {
   createRestaurantDetailTemplate,
-  createLikeButtonTemplate,
+  createLikeRestaurantButtonTemplate,
   createLoadingTemplate,
   createErrorTemplate,
 } from '../templates/template-creator';
@@ -37,7 +37,7 @@ const Detail = {
         },
       });
       view = createRestaurantDetailTemplate(restaurants);
-      likeButtonContainer.innerHTML = createLikeButtonTemplate();
+      likeButtonContainer.innerHTML = createLikeRestaurantButtonTemplate();
       restaurantContainer.innerHTML = view;
       postDataReview.renderForm(url.id);
     } catch (error) {

@@ -155,6 +155,16 @@ main {
       margin-bottom: 50px;
     }
   }
+
+  &__list {
+    &__not-found {
+      text-align: center;
+      padding: 20%;
+       h1 {
+        margin-bottom: 20px;
+       }
+    }
+  }
 }
 
 /*
@@ -521,18 +531,6 @@ main {
       font-size: 20px;
     }
   }
-}
-
-/*
-  Undefined
-*/
-
-.undefined {
-  text-align: center;
-  padding: 20%;
-   h1 {
-    margin-bottom: 20px;
-   }
 }
 
 /*

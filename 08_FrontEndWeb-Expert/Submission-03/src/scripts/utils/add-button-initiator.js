@@ -5,10 +5,21 @@ const postDataReview = {
   async renderForm(id) {
     const addButton = document.querySelector('#addButton');
     const formPost = document.querySelector('.addForm');
-    addButton.addEventListener('click', () => {
-      formPost.innerHTML = createFormTemplate();
-      this.afterRenderForm(id);
-    });
+
+    if (navigator.onLine) {
+      console.log('online');
+
+      addButton.addEventListener('click', () => {
+        formPost.innerHTML = createFormTemplate();
+        this.afterRenderForm(id);
+      });
+    } else {
+      console.log('offline');
+
+      addButton.addEventListener('click', () => {
+        alert('Unable to add review in offline mode !');
+      });
+    }
   },
 
   async afterRenderForm(id) {
