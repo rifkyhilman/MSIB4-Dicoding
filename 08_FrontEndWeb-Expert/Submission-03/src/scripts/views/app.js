@@ -5,6 +5,8 @@ import '../components/restaurant-hero';
 import '../components/restaurant-list';
 import '../components/restaurant-detail';
 import '../components/restaurant-favorite';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 class App {
   constructor({ button, drawer, content }) {

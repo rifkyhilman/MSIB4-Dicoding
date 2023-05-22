@@ -15,9 +15,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
     </div>
   </div>
   <div class="restaurant__poster">
-    <img 
-    src="${ENDPOINT.LARGE_IMAGE + restaurant.pictureId}"
-    alt="${restaurant.name}">
+    <img class="lazyload" data-src="${ENDPOINT.LARGE_IMAGE + restaurant.pictureId}" alt="${restaurant.name}">
   </div>
   <div class="restaurant__description">
     <h2>Deskripsi</h2>
@@ -58,7 +56,7 @@ const createRestaurantItemTemplate = (restaurant) => `
   <div class="restaurant-item">
   <div class="restaurant-item__header">
     <a href="/#/detail/${restaurant.id}">
-      <img class="restaurant-item__header__poster" alt="${restaurant.name}" src="${ENDPOINT.MEDIUM_IMAGE + restaurant.pictureId}">
+      <img class="lazyload" alt="${restaurant.name}" data-src="${ENDPOINT.SMALL_IMAGE + restaurant.pictureId}">
     </a>
     <div class="restaurant-item__header__label">
       <p>${restaurant.city}</p>
